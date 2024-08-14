@@ -14,8 +14,9 @@
     }
 
     var app = new Proxy(data, {
-        get() {
+        get(target, prop) {
             console.log('값 접근')
+            return target[prop];
         },
         set(target, prop, newValue) {
             console.log('값 갱신')
